@@ -1,82 +1,83 @@
-# Shared Document Network Demo
+# Shared Document Network デモ
 
-This directory contains a complete demonstration of the shared document mod capabilities, showing how multiple agents can collaborate on document creation, editing, and review in real-time.
+このディレクトリには、共有ドキュメントmodの機能を完全に実演するデモが含まれており、複数のエージェントがリアルタイムでドキュメントの作成、編集、レビューに協力する方法を示しています。
 
-## Demo Overview
+## デモ概要
 
-The demo showcases:
+このデモでは以下を実演します：
 
-1. **Document Creation**: An editor agent creates a new shared document
-2. **Collaborative Editing**: Multiple agents simultaneously edit different parts
-3. **Review and Comments**: A reviewer agent adds feedback and suggestions
-4. **Presence Tracking**: Agents track each other's working positions
-5. **Document Management**: Viewing content, history, and managing documents
+1. **ドキュメント作成**: エディターエージェントが新しい共有ドキュメントを作成
+2. **共同編集**: 複数のエージェントが同時に異なる部分を編集
+3. **レビューとコメント**: レビューアーエージェントがフィードバックと提案を追加
+4. **プレゼンス追跡**: エージェントがお互いの作業位置を追跡
+5. **ドキュメント管理**: コンテンツ、履歴の表示、およびドキュメントの管理
 
-## Files
+## ファイル
 
-- `network_config.yaml`: Network configuration for the demo
-- `editor_agent.yaml`: Configuration for the document editor agent
-- `reviewer_agent.yaml`: Configuration for the document reviewer agent  
-- `collaborator_agent.yaml`: Configuration for the collaborative agent
-- `demo_script.py`: Main demonstration script
-- `README.md`: This documentation file
+- `network.yaml`: デモ用のネットワーク設定
+- `editor_agent.yaml`: ドキュメントエディターエージェントの設定
+- `reviewer_agent.yaml`: ドキュメントレビューアーエージェントの設定
+- `collaborator_agent.yaml`: 共同作業エージェントの設定
+- `demo_script.py`: メインの実演スクリプト
+- `simple_demo.py`: 簡易版デモスクリプト（モックネットワークを使用）
+- `README.md`: このドキュメントファイル
 
-## Prerequisites
+## 前提条件
 
-1. OpenAgents installed and configured
-2. Python 3.8+ with required dependencies
-3. OpenAI API key (set as `OPENAI_API_KEY` environment variable)
+1. OpenAgentsがインストールされ、設定されていること
+2. Python 3.8+ と必要な依存関係
+3. OpenAI API キー（`OPENAI_API_KEY`環境変数として設定）
 
-## Running the Demo
+## デモの実行
 
-1. **Set up environment variables**:
+1. **環境変数の設定**:
    ```bash
    export OPENAI_API_KEY="your-openai-api-key"
    ```
 
-2. **Run the demo**:
+2. **デモの実行**:
    ```bash
-   cd examples/shared_document_network
+   cd shared_document_network
    python demo_script.py
    ```
 
-3. **Watch the collaboration**:
-   The script will demonstrate various shared document operations with detailed output showing what each agent is doing.
+3. **共同作業の観察**:
+   スクリプトは各エージェントの動作を詳細な出力で示しながら、様々な共有ドキュメント操作を実演します。
 
-## Demo Scenarios
+## デモシナリオ
 
-### Scenario 1: Document Creation
-- Editor agent creates a new "Project Requirements" document
-- Sets initial content with placeholder sections
-- Grants read/write permissions to other agents
+### シナリオ1: ドキュメント作成
+- エディターエージェントが新しい「Project Requirements」ドキュメントを作成
+- プレースホルダーセクション付きの初期コンテンツを設定
+- 他のエージェントに読み書き権限を付与
 
-### Scenario 2: Collaborative Editing
-- Multiple agents open the same document
-- Editor updates the scope section
-- Collaborator adds detailed timeline information
-- Editor adds resource allocation details
-- All changes are synchronized in real-time
+### シナリオ2: 共同編集
+- 複数のエージェントが同じドキュメントを開く
+- エディターがスコープセクションを更新
+- 共同作業者が詳細なタイムライン情報を追加
+- エディターがリソース割り当ての詳細を追加
+- すべての変更がリアルタイムで同期される
 
-### Scenario 3: Review and Comments
-- Reviewer agent opens the document
-- Adds constructive comments to specific lines
-- Provides feedback on content quality and completeness
-- Comments are attached to specific line numbers
+### シナリオ3: レビューとコメント
+- レビューアーエージェントがドキュメントを開く
+- 特定の行に建設的なコメントを追加
+- コンテンツの品質と完全性に関するフィードバックを提供
+- コメントは特定の行番号に添付される
 
-### Scenario 4: Presence Tracking
-- Agents update their cursor positions
-- System tracks who is working where in the document
-- Other agents can see active collaborators and their positions
+### シナリオ4: プレゼンス追跡
+- エージェントがカーソル位置を更新
+- システムが誰がドキュメントのどこで作業しているかを追跡
+- 他のエージェントがアクティブな共同作業者とその位置を確認可能
 
-### Scenario 5: Document Management
-- Retrieving current document content with comments
-- Viewing operation history to see all changes
-- Listing available documents
-- Managing document access and permissions
+### シナリオ5: ドキュメント管理
+- コメント付きの現在のドキュメントコンテンツを取得
+- すべての変更を確認するための操作履歴を表示
+- 利用可能なドキュメントの一覧表示
+- ドキュメントアクセスと権限の管理
 
-## Expected Output
+## 期待される出力
 
-The demo produces detailed console output showing:
+デモは詳細なコンソール出力を生成し、以下を示します：
 
 ```
 🎯 Starting Shared Document Collaboration Demo
@@ -118,67 +119,97 @@ Listing all available documents...
 ============================================================
 ```
 
-## Customization
+## カスタマイズ
 
-You can customize the demo by:
+以下の方法でデモをカスタマイズできます：
 
-1. **Modifying agent configurations**: Edit the YAML files to change agent personalities or capabilities
-2. **Changing document content**: Update the initial content in `demo_script.py`
-3. **Adding more agents**: Create additional agent configurations and add them to the demo
-4. **Extending scenarios**: Add new demo functions to showcase additional features
+1. **エージェント設定の変更**: YAMLファイルを編集してエージェントの性格や機能を変更
+2. **ドキュメントコンテンツの変更**: `demo_script.py`の初期コンテンツを更新
+3. **エージェントの追加**: 追加のエージェント設定を作成し、デモに追加
+4. **シナリオの拡張**: 新しいデモ関数を追加して追加機能を実演
 
-## Troubleshooting
+## トラブルシューティング
 
-### Common Issues
+### よくある問題
 
-1. **Network connection errors**: Ensure no other services are using port 8888
-2. **Agent registration failures**: Check that agent configurations are valid
-3. **OpenAI API errors**: Verify your API key is set correctly
-4. **Permission errors**: Ensure agents have proper access permissions
+1. **ネットワーク接続エラー**: 
+   - 他のサービスがポート8700を使用していないことを確認してください
+   - エージェント設定ファイル（`editor_agent.yaml`など）のポート番号が`network.yaml`の設定と一致していることを確認してください（デフォルトは8700）
 
-### Debug Mode
+2. **認証エラー**:
+   - 開発環境では、`network.yaml`に`disable_agent_secret_verification: true`を追加して認証を無効化できます
+   - 本番環境ではこの設定を削除または`false`に設定してください
 
-Enable debug logging by modifying the network config:
+3. **エージェント登録失敗**: エージェント設定が有効であることを確認してください
+
+4. **OpenAI API エラー**: APIキーが正しく設定されていることを確認してください
+
+5. **権限エラー**: エージェントが適切なアクセス権限を持っていることを確認してください
+
+### デバッグモード
+
+ネットワーク設定を変更してデバッグログを有効化：
 
 ```yaml
-logging:
-  level: "DEBUG"
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+log_level: "DEBUG"
 ```
 
-### Manual Testing
+### 手動テスト
 
-You can also test individual operations manually:
+個別の操作を手動でテストすることもできます：
 
 ```python
-# Create a simple test
+# 簡単なテストを作成
 import asyncio
-from openagents.agents.simple_agent import SimpleAgent
+from openagents.utils.agent_loader import load_agent_from_yaml
 
 async def test_basic_operations():
-    agent = SimpleAgent("test_agent.yaml")
-    await agent.start()
-    
-    # Create document
-    result = await agent.create_document(
-        document_name="Test Doc",
-        initial_content="Hello World"
+    agent, connection = load_agent_from_yaml("editor_agent.yaml")
+    await agent.async_start(
+        network_host=connection.get("host", "localhost") if connection else "localhost",
+        network_port=connection.get("port", 8700) if connection else 8700,
+        network_id=connection.get("network_id") if connection else None
     )
-    print(f"Create result: {result}")
     
-    await agent.stop()
+    # ドキュメントを作成
+    documents_adapter = agent.get_mod_adapter("openagents.mods.workspace.documents")
+    if documents_adapter:
+        result = await documents_adapter.create_document(
+            document_name="Test Doc",
+            initial_content="Hello World"
+        )
+        print(f"Create result: {result}")
+    
+    await agent.async_stop()
 
 asyncio.run(test_basic_operations())
 ```
 
-## Integration Examples
+## 統合例
 
-The shared document mod can be integrated into various use cases:
+共有ドキュメントmodは、様々なユースケースに統合できます：
 
-1. **Code Review Systems**: Collaborative code review with inline comments
-2. **Documentation Creation**: Multi-author documentation with real-time editing
-3. **Project Planning**: Collaborative requirement and planning documents
-4. **Knowledge Management**: Shared knowledge bases with expert contributions
-5. **Content Creation**: Collaborative writing and editing workflows
+1. **コードレビューシステム**: インラインコメント付きの共同コードレビュー
+2. **ドキュメント作成**: リアルタイム編集による複数著者によるドキュメント作成
+3. **プロジェクト計画**: 共同要件および計画ドキュメント
+4. **ナレッジ管理**: 専門家による貢献を含む共有ナレッジベース
+5. **コンテンツ作成**: 共同執筆および編集ワークフロー
 
-This demo provides a foundation for building more complex collaborative document systems using the OpenAgents shared document mod.
+このデモは、OpenAgents共有ドキュメントmodを使用して、より複雑な共同ドキュメントシステムを構築するための基盤を提供します。
+
+## 設定ファイルの説明
+
+### network.yaml
+ネットワークの設定ファイルです。以下の主要な設定が含まれています：
+- **ポート設定**: HTTPポート8700、gRPCポート8600
+- **セキュリティ設定**: 開発環境では`encryption_enabled: false`、`disable_agent_secret_verification: true`を推奨
+- **Mod設定**: 共有ドキュメント、メッセージング、フォーラム、Wikiなどのmodが有効化されています
+
+### エージェント設定ファイル（editor_agent.yaml, reviewer_agent.yaml, collaborator_agent.yaml）
+各エージェントの設定を含んでいます：
+- **agent_id**: エージェントの一意の識別子
+- **config**: モデル名、プロバイダー、指示文などの設定
+- **mods**: 有効化するmodのリスト（`openagents.mods.workspace.documents`が必須）
+- **connection**: ネットワーク接続情報（ホスト、ポート、ネットワークID）
+
+**重要**: エージェント設定ファイルのポート番号は`network.yaml`のHTTPポート（デフォルト8700）と一致させる必要があります。
